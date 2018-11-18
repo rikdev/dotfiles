@@ -29,3 +29,20 @@
 
 [status]
 	showStash = true
+
+# URL aliases
+
+[url "git@github.com:"]
+	insteadOf = @gh:
+
+[url "https://github.com/"]
+	insteadOf = gh://
+
+[url "https://git.savannah.gnu.org/git/"]
+	insteadOf = savannah://
+
+[url "aur@aur.archlinux.org"]
+	insteadOf = @aur:
+
+[url "https://aur.archlinux.org/"]
+	insteadOf = aur://
