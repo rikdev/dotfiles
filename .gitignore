@@ -8,6 +8,10 @@
 !/.pkglist
 !/.pkglist/**
 
+# Shell
+!/.bashrc
+!/.inputrc
+
 # git
 !/.config/git/
 !/.config/git/config

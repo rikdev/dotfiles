@@ -1,0 +1,108 @@
+$include /etc/inputrc
+
+# Editing mode
+# https://wiki.archlinux.org/index.php/Readline#Editing_mode
+set editing-mode vi
+# https://wiki.archlinux.org/index.php/Readline#Mode_indicator_in_prompt
+set show-mode-in-prompt on
+
+$if term=dumb
+set vi-ins-mode-string "I "
+set vi-cmd-mode-string "C "
+$else
+set vi-ins-mode-string "\1\e[0m\2I "
+set vi-cmd-mode-string "\1\e[0m\2C "
+$endif
+
+# Fast word movement
+# https://wiki.archlinux.org/index.php/Readline#Fast_word_movement
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+
+# History
+# https://wiki.archlinux.org/index.php/Readline#History
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\es": forward-search-history
+
+$if mode=vi
+set keymap vi-command
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+j: history-search-forward
+k: history-search-backward
+set keymap vi-insert
+# Several emacs key bindings for macro compatibility
+# Moving
+"\C-a": beginning-of-line
+"\C-e": end-of-line
+"\C-f": forward-char
+"\C-b": backward-char
+"\ef": forward-word
+"\eb": backward-word
+"\C-l": clear-screen
+# History
+"\C-p": previous-history
+"\C-n": next-history
+"\ep": non-incremental-reverse-search-history
+"\en": non-incremental-forward-search-history
+"\e\C-y": yank-nth-arg
+"\e.": yank-last-arg
+# Changing text
+"\C-d": delete-char
+"\e\t": tab-insert
+"\et": transpose-words
+"\eu": upcase-word
+"\el": downcase-word
+"\ec": capitalize-word
+# Killing and Yanking
+"\C-k": kill-line
+"\C-x\b": backward-kill-line
+"\ed": kill-word
+"\e\b": backward-kill-word
+"\e\\": delete-horizontal-space
+"\ey": yank-pop
+# Completing
+"\e?": possible-completions
+"\e*": insert-completions
+# Keyboard macros
+"\C-x(": start-kbd-macro
+"\C-x)": end-kbd-macro
+"\C-xe": call-last-kbd-macro
+# Miscellaneous
+"\C-x\C-r": re-read-init-file
+"\C-g": abort
+"\C-x\C-u": undo
+"\er": revert-line
+"\C-@": set-mark
+"\e ": set-mark
+"\C-x\C-x": exchange-point-and-mark
+"\C-]": character-search
+"\e\C-]": character-search-backward
+$endif
+
+# Completion
+# https://wiki.archlinux.org/index.php/Readline#Faster_completion
+set show-all-if-unmodified On
+set completion-ignore-case On
+set skip-completed-text On
+
+# Colorized completion
+# https://wiki.archlinux.org/index.php/Readline#Colorized_completion
+# Color files by types
+set colored-stats On
+# Append char to indicate type
+set visible-stats On
+# Mark symlinked directories
+set mark-symlinked-directories On
+# Color the common prefix
+set colored-completion-prefix On
+# Color the common prefix in menu-complete
+set menu-complete-display-prefix On
+
+# Macros
+# https://wiki.archlinux.org/index.php/Readline#Macros
+# Prefixes the line with sudo, if Alt+S is pressed
+"\es": "\C-asudo \C-e"
+# Quickly send a command in the background with Ctrl+Alt+B
+"\e\C-b": "\C-e > /dev/null 2>&1 &\C-m"
