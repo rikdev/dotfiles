@@ -37,6 +37,10 @@ git --git-dir="${GIT_DIR}" fetch
 git --git-dir="${GIT_DIR}" --work-tree="${HOME}" checkout origin/master
 ```
 
+### Dependencies
+
+To install dependencies see the *.pkglist* folder.
+
 ## Deletion
 
 In order to delete the repository and all its files from the system,

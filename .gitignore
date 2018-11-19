@@ -4,6 +4,10 @@
 !/.config/
 !/.local/
 
+# .pkglist
+!/.pkglist
+!/.pkglist/**
+
 # git
 !/.config/git/
 !/.config/git/config
