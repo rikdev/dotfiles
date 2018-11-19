@@ -9,6 +9,10 @@
 !/.pkglist
 !/.pkglist/**
 
+# bin
+!/bin
+!/bin/dotfiles
+
 # Environment variables
 !/.pam_environment
 
