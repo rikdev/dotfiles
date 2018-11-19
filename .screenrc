@@ -1,0 +1,57 @@
+# Don't display copyright notice on startup
+startup_message off
+
+# Don't use visual bell
+vbell off
+
+# Clear terminal after text editor like nano
+altscreen on
+
+# Enable activity monitoring in background windows
+defmonitor on
+
+# Size of the scrollback buffer
+defscrollback 4096
+
+# Watch for mouse clicks
+mousetrack on
+
+# Statusbar
+hardstatus alwaysfirstline '%{= gk}%?%E?%: %? %-Lw%{+b .b}[%n%f %t]%{-}%+Lw%=%?<%u> %?%S %c'
+#                           \_____/\________/ \__/\______/\_______/\__/\__/\/\_______/\/ \/
+#                              1       2       3     4        5     6   7  8     9    a  b
+# 1: set line color (g - green background; k - black foreign color)
+# 2: if the escape character has been pressed then print '?' else print one space char
+# 3: print all window numbers, names and flags up to the current window
+# 4: set current window title text style
+#    (+b - bold; . - leave background color unchanged; b - blue foreign color)
+# 5: print current window number (%n), flags (%f) and title (%t) in square brackets
+# 6: reset text style to it previous state (before the most recent change)
+# 7: print all window numbers, names and flags starting with the window after the current one
+# 8: pad the string to the display’s width (like TeX’s hfill)
+# 9: if this window has other users then print their in triangle brackets
+# a: print session name
+# b: print current time HH:MM in 24h format
+
+# Window caption
+caption string '%?%F%{= wk}*%:%{= wK} %?%3n %h%=%f'
+#               \______________________/\_/ \/\/\/
+#                          1             2  3 4 5
+# 1: if window has the focus then set color for focused window caption and print '*'
+#    else set color for non-focused window caption and print space char
+# 2: print number of the window
+# 3: print hardstatus of the window
+# 4: pad the string to the display’s width (like TeX’s hfill)
+# 5: print flags of the window
+
+# Fix for Name column in windowlist only show "bash"
+# see "caption string" command
+windowlist string '%?%F*%: %?%3n %h%=%f'
+
+# Focus
+bind ^h focus left
+bind ^j focus down
+bind ^k focus up
+bind ^l focus right
+bind ^t focus top
+bind ^b focus bottom
