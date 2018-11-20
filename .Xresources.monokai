@@ -1,0 +1,17 @@
+! Monokai color theme
+#define COLOR0 rgb:22/28/27
+#define COLOR1 rgb:9e/54/01
+#define COLOR2 rgb:04/aa/74
+#define COLOR3 rgb:a6/83/1a
+#define COLOR4 rgb:34/03/a7
+#define COLOR5 rgb:9c/56/89
+#define COLOR6 rgb:49/b6/b6
+#define COLOR7 rgb:ca/ca/ca
+#define COLOR8 rgb:7c/7c/7c
+#define COLOR9 rgb:f5/83/03
+#define COLOR10 rgb:06/d0/8d
+#define COLOR11 rgb:e5/c2/58
+#define COLOR12 rgb:4b/04/f3
+#define COLOR13 rgb:b8/7d/a8
+#define COLOR14 rgb:81/cc/cc
+#define COLOR15 rgb:ff/ff/ff

@@ -23,6 +23,10 @@
 # Screen
 !/.screenrc
 
+# .Xresources
+!/.Xresources
+!/.Xresources.monokai
+
 # Vim
 !/.vim
 
