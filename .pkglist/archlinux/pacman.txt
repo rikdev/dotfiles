@@ -5,3 +5,5 @@ screen
 xterm
 i3-wm
 dmenu
+i3status
+otf-font-awesome
