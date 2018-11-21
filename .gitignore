@@ -33,3 +33,7 @@
 # git
 !/.config/git/
 !/.config/git/config
+
+# i3
+!/.config/i3/
+!/.config/i3/config

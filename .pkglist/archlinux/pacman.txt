@@ -3,3 +3,5 @@ tk
 gvim
 screen
 xterm
+i3-wm
+dmenu
