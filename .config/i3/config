@@ -188,3 +188,23 @@ bindsym button8 move right
 # Jump to urgent window
 # https://wiki.archlinux.org/index.php/i3#Jump_to_urgent_window
 bindsym $mod+x [urgent=latest] focus
+
+# Shutdown, reboot, lock screen
+# https://wiki.archlinux.org/index.php/i3#Shutdown,_reboot,_lock_screen
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+mode "$mode_system" {
+        bindsym l exec --no-startup-id loginctl lock-session, mode "default"
+        bindsym e exec --no-startup-id loginctl terminate-session "${XDG_SESSION_ID}", mode "default"
+        bindsym s exec --no-startup-id systemctl suspend, mode "default"
+        bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+        bindsym r exec --no-startup-id systemctl reboot, mode "default"
+        bindsym p exec --no-startup-id systemctl poweroff --ignore-inhibitors, mode "default"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+Pause mode "$mode_system"
+
+# Startup
+exec --no-startup-id xss-lock --ignore-sleep -- i3lock --nofork
