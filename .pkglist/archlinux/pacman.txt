@@ -9,3 +9,4 @@ i3status
 otf-font-awesome
 i3lock
 xss-lock
+playerctl

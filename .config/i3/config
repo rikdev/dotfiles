@@ -189,6 +189,10 @@ bar {
 bindsym XF86AudioRaiseVolume $vol_up
 bindsym XF86AudioLowerVolume $vol_down
 bindsym XF86AudioMute $vol_toggle
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Mouse keys
 # The middle button over a titlebar kills the window
