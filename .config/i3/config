@@ -169,13 +169,26 @@ focus_follows_mouse no
 # Hiding borders adjacent to the screen edges
 hide_edge_borders smart
 
+# Volume control commands
+set $vol_up exec --no-startup-id pactl set-sink-volume '@DEFAULT_SINK@' +2%
+set $vol_down exec --no-startup-id pactl set-sink-volume '@DEFAULT_SINK@' -2%
+set $vol_toggle exec --no-startup-id pactl set-sink-mute '@DEFAULT_SINK@' toggle
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
+        bindsym button2 $vol_toggle
+        bindsym button4 $vol_up
+        bindsym button5 $vol_down
         position top
         tray_output primary
 }
+
+# Media keys
+bindsym XF86AudioRaiseVolume $vol_up
+bindsym XF86AudioLowerVolume $vol_down
+bindsym XF86AudioMute $vol_toggle
 
 # Mouse keys
 # The middle button over a titlebar kills the window
