@@ -184,3 +184,7 @@ bindsym --release --whole-window $mod+button2 kill
 # The side buttons move the window around
 bindsym button9 move left
 bindsym button8 move right
+
+# Jump to urgent window
+# https://wiki.archlinux.org/index.php/i3#Jump_to_urgent_window
+bindsym $mod+x [urgent=latest] focus
