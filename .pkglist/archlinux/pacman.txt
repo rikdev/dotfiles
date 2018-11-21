@@ -13,3 +13,5 @@ playerctl
 compton
 feh
 archlinux-wallpaper
+xorg-xrandr
+imagemagick
