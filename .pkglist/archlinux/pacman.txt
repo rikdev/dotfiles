@@ -11,3 +11,5 @@ i3lock
 xss-lock
 playerctl
 compton
+feh
+archlinux-wallpaper
