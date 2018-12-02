@@ -8,6 +8,9 @@
 !/.pkglist
 !/.pkglist/**
 
+# Environment variables
+!/.pam_environment
+
 # Shell
 !/.bashrc
 !/.inputrc
