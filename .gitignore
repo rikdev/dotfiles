@@ -1,5 +1,6 @@
 *
 !/.gitignore
+!/.gitmodules
 !/README.md
 !/.config/
 !/.local/
@@ -14,6 +15,9 @@
 # Shell
 !/.bashrc
 !/.inputrc
+
+# Vim
+!/.vim
 
 # git
 !/.config/git/

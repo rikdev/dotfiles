@@ -1,1 +1,2 @@
 PATH DEFAULT=@{HOME}/bin:@{HOME}/.local/bin
+VISUAL DEFAULT=vim

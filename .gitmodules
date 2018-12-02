@@ -1,0 +1,6 @@
+[submodule ".vim"]
+	path = .vim
+	url = https://github.com/rikdev/vimfiles.git
+	branch = master
+	update = rebase
+	fetchRecurseSubmodules = true

@@ -13,6 +13,7 @@ git init
 git remote add origin <this repo>
 git fetch
 git checkout origin/master
+git submodule update --init --recursive
 ```
 
 If you want to hide some settings you can do it with a
@@ -35,6 +36,7 @@ git --git-dir="${GIT_DIR}" init
 git --git-dir="${GIT_DIR}" remote add origin <this repo>
 git --git-dir="${GIT_DIR}" fetch
 git --git-dir="${GIT_DIR}" --work-tree="${HOME}" checkout origin/master
+git --git-dir="${GIT_DIR}" --work-tree="${HOME}" submodule update --init --recursive
 ```
 
 ### Dependencies
