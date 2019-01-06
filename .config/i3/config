@@ -182,7 +182,8 @@ bar {
         bindsym button4 $vol_up
         bindsym button5 $vol_down
         position top
-        tray_output primary
+        # Uncomment for multiple monitor configuration
+        #tray_output primary
 }
 
 # Media keys
