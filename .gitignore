@@ -44,3 +44,7 @@
 # dunst
 !/.config/dunst/
 !/.config/dunst/dunstrc
+
+# redshift
+!/.config/redshift/
+!/.config/redshift/redshift.conf

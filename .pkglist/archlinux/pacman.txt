@@ -16,3 +16,4 @@ archlinux-wallpaper
 xorg-xrandr
 imagemagick
 dunst
+redshift
