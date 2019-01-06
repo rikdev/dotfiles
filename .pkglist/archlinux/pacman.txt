@@ -17,3 +17,4 @@ xorg-xrandr
 imagemagick
 dunst
 redshift
+udiskie
