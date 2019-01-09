@@ -15,6 +15,7 @@ feh
 archlinux-wallpaper
 xorg-xrandr
 imagemagick
+dex
 dunst
 redshift
 udiskie
