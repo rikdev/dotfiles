@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly WALLPAPER_PATH="${1:-/usr/share/archlinux/wallpaper/archlinux-simplyblack.png}"
+readonly WALLPAPER_PATH="${1:-/usr/share/backgrounds/archlinux/archlinux-simplyblack.png}"
 readonly BACKGROUND_COLOR="${2:-000000}"
 
 if [[ -f "${WALLPAPER_PATH}" ]]; then
