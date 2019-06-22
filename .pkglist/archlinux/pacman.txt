@@ -19,3 +19,4 @@ dex
 dunst
 redshift
 udiskie
+network-manager-applet
