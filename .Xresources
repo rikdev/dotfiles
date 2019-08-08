@@ -40,6 +40,8 @@ xterm.*.vt100.faceSize4: 12
 xterm.*.vt100.faceSize5: 14
 
 xterm.*.VT100.translations: #override \n\
+    Shift <Key> Home: scroll-to(begin) \n\
+    Shift <Key> End: scroll-to(end) \n\
     Ctrl Shift <Key> =: larger-vt-font() \n\
     Ctrl Shift <Key> -: smaller-vt-font() \n\
     Ctrl Shift <Key> 0: set-vt-font(d) \n\
