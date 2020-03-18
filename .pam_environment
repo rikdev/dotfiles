@@ -1,2 +1,2 @@
-PATH DEFAULT=@{HOME}/bin:@{HOME}/.local/bin
+PATH DEFAULT=@{HOME}/.local/bin:@{HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
 VISUAL DEFAULT=vim
