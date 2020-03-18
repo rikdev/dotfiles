@@ -169,6 +169,9 @@ focus_follows_mouse no
 # Hiding borders adjacent to the screen edges
 hide_edge_borders smart
 
+# Layout mode for new containers
+workspace_layout tabbed
+
 # Volume control commands
 set $vol_up exec --no-startup-id pactl set-sink-volume '@DEFAULT_SINK@' +2%
 set $vol_down exec --no-startup-id pactl set-sink-volume '@DEFAULT_SINK@' -2%
