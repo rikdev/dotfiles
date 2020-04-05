@@ -32,6 +32,9 @@
 # Vim
 !/.vim
 
+# EditorConfig
+!/.editorconfig
+
 # git
 !/.config/git/
 !/.config/git/config
