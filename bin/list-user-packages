@@ -1,0 +1,62 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+usage() {
+	cat <<-EOF
+	Usage: $(basename "${BASH_SOURCE[0]}") [option]...
+	Options:
+	  -p, --exclude-package NAME
+	  -g, --exclude-group NAME
+
+	Description:
+	Lists all explicitly installed packages exclude system packages.
+	EOF
+
+	exit 1
+}
+
+contains() {
+	local -r VALUE="$1"
+	local -r LIST=("${@:2}")
+
+	for item in "${LIST[@]}"; do
+		[[ "${VALUE}" == "${item}" ]] && return 0
+	done
+
+	return 1
+}
+
+EXCLUDED_PACKAGES=(base linux linux-firmware)
+EXCLUDED_GROUPS=(base-devel)
+
+while [[ $# -gt 0 ]]; do
+	case "$1" in
+		-p|--exclude-package)
+			shift
+			[[ $# -gt 0 ]] || usage
+			EXCLUDED_PACKAGES+=("$1")
+			;;
+		-g|--exclude-group)
+			shift
+			[[ $# -gt 0 ]] || usage
+			EXCLUDED_GROUPS+=("$2")
+			;;
+		*)
+			echo "Invalid option $1" >&2
+			usage
+	esac
+	shift
+done
+
+if [[ ${#EXCLUDED_GROUPS} -gt 0 ]]; then
+	readarray -t GROUP_PACKAGES < <(pacman --query --groups "${EXCLUDED_GROUPS[@]}" \
+		| cut --delimiter=' ' --fields=2)
+	EXCLUDED_PACKAGES+=("${GROUP_PACKAGES[@]}")
+fi
+
+readarray -t PACKAGES < <(pacman --query --explicit)
+for package in "${PACKAGES[@]}"; do
+	contains "$(echo "${package}" | cut --delimiter=' ' --fields=1)" "${EXCLUDED_PACKAGES[@]}" \
+		|| echo "${package}"
+done
