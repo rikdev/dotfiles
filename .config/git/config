@@ -34,9 +34,11 @@
 
 [url "git@github.com:"]
 	insteadOf = @gh:
+	insteadOf = @github:
 
 [url "https://github.com/"]
 	insteadOf = gh://
+	insteadOf = github://
 
 [url "https://git.savannah.gnu.org/git/"]
 	insteadOf = savannah://
