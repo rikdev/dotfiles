@@ -13,9 +13,6 @@ defmonitor on
 # Size of the scrollback buffer
 defscrollback 4096
 
-# Watch for mouse clicks
-mousetrack on
-
 # Statusbar
 hardstatus alwaysfirstline '%{= gk}%?%E?%: %? %-Lw%{+b .b}[%n%f %t]%{-}%+Lw%=%?<%u> %?%S %c'
 #                           \_____/\________/ \__/\______/\_______/\__/\__/\/\_______/\/ \/
