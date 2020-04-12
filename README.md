@@ -39,7 +39,7 @@ git --git-dir="${GIT_DIR}" --work-tree="${HOME}" checkout origin/master
 git --git-dir="${GIT_DIR}" --work-tree="${HOME}" submodule update --init --recursive
 ```
 
-If you choose the last variant, the script `bin/dotfiles` can help you to manage
+If you choose the last variant, the script `.local/bin/dotfiles` can help you to manage
 the repository.
 
 ### Dependencies

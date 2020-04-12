@@ -9,12 +9,6 @@
 !/.pkglist
 !/.pkglist/**
 
-# bin
-!/bin
-!/bin/dotfiles
-!/bin/list-user-packages
-!/bin/lock-screen
-
 # Environment variables
 !/.pam_environment
 
@@ -52,3 +46,9 @@
 # redshift
 !/.config/redshift/
 !/.config/redshift/redshift.conf
+
+# .local/bin/
+!/.local/bin/
+!/.local/bin/dotfiles
+!/.local/bin/list-user-packages
+!/.local/bin/lock-screen
