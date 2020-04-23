@@ -1,2 +1,3 @@
 PATH DEFAULT=@{HOME}/.local/bin:@{HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
+EDITOR DEFAULT=vim
 VISUAL DEFAULT=vim
