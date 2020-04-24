@@ -29,6 +29,9 @@
 # EditorConfig
 !/.editorconfig
 
+# Default applications
+!/.config/mimeapps.list
+
 # git
 !/.config/git/
 !/.config/git/config
