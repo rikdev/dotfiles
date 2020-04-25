@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Sets a random image file to the desktop background.
+# Usage: set-background [FILE|DIRECTORY ...]
+# If arguments list is empty the script looks for random file in
+# ~/.local/share/backgrounds/, ~/.local/share/wallpapers/,
+# /usr/share/backgrounds/ and /usr/share/wallpapers/ directories.
+
+set -o errexit -o nounset -o pipefail
+
+IMAGES=("${@}")
+if [[ -z "${IMAGES[*]}" ]]; then
+	IMAGES=({~/.local,/usr}/share/{backgrounds,wallpapers}/)
+fi
+
+# Try to load 9 random files
+for ((i=0; i<9; ++i)); do
+	# shellcheck disable=SC2015
+	feh --recursive --randomize --no-fehbg --bg-fill "${IMAGES[@]}" 2>/dev/null \
+		&& exit || true
+done
+
+echo "Error couldn't find image file." >&2
+exit 1

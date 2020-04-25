@@ -229,7 +229,7 @@ bindsym $mod+Pause mode "$mode_system"
 
 # Startup
 exec --no-startup-id compton --daemon # https://wiki.archlinux.org/index.php/I3#Tearing
-exec --no-startup-id feh --bg-fill /usr/share/backgrounds/archlinux/archlinux-simplyblack.png
+exec --no-startup-id set-background
 exec --no-startup-id xss-lock --ignore-sleep -- lock-screen
 exec --no-startup-id dex --autostart
 exec --no-startup-id redshift-gtk

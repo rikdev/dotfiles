@@ -55,3 +55,4 @@
 !/.local/bin/dotfiles
 !/.local/bin/list-user-packages
 !/.local/bin/lock-screen
+!/.local/bin/set-background
