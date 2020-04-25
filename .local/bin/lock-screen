@@ -3,24 +3,22 @@
 readonly WALLPAPER_PATH="${1:-/usr/share/backgrounds/archlinux/archlinux-simplyblack.png}"
 readonly BACKGROUND_COLOR="${2:-000000}"
 
-if [[ -f "${WALLPAPER_PATH}" ]]; then
-  readonly CONVERTED_WALLPAPER_PATH="/tmp/lock-screen-wallpaper.png"
-  readonly RESOLUTION="$(xrandr 2>/dev/null | awk '/*/ {print $1; exit}')"
-  if [[ -n "${RESOLUTION}" ]]; then
-    convert \
-      "${WALLPAPER_PATH}" \
-      -background "#${BACKGROUND_COLOR}" \
-      -resize "${RESOLUTION}" \
-      -gravity center \
-      -extent "${RESOLUTION}" \
-      PNG:"${CONVERTED_WALLPAPER_PATH}" \
-      && readonly IMAGE_OPTION="--image="${CONVERTED_WALLPAPER_PATH}""
-  fi
-fi
+RESOLUTION="$(xrandr 2>/dev/null | awk '/*/ {print $1; exit}')"
+readonly RESOLUTION
 
-i3lock \
-  --nofork \
-  --show-failed-attempts \
-  --pointer=default \
-  --color="${BACKGROUND_COLOR}" \
-  "${IMAGE_OPTION:-}"
+{
+	convert \
+		"${WALLPAPER_PATH}" \
+		-background "#${BACKGROUND_COLOR}" \
+		-resize "${RESOLUTION}" \
+		-gravity center \
+		-extent "${RESOLUTION}" \
+		RGB:- \
+	| i3lock \
+		--nofork \
+		--show-failed-attempts \
+		--pointer=default \
+		--color="${BACKGROUND_COLOR}" \
+		--raw="${RESOLUTION}:rgb" \
+		--image=/dev/stdin
+} 2>/dev/null
