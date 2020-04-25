@@ -1,7 +1,6 @@
 #!/bin/bash
 
 readonly WALLPAPER_PATH="${1:-/usr/share/backgrounds/archlinux/archlinux-simplyblack.png}"
-readonly BACKGROUND_COLOR="${2:-000000}"
 
 RESOLUTION="$(xrandr 2>/dev/null | awk '/*/ {print $1; exit}')"
 readonly RESOLUTION
@@ -9,8 +8,7 @@ readonly RESOLUTION
 {
 	convert \
 		"${WALLPAPER_PATH}" \
-		-background "#${BACKGROUND_COLOR}" \
-		-resize "${RESOLUTION}" \
+		-resize "${RESOLUTION}^" \
 		-gravity center \
 		-extent "${RESOLUTION}" \
 		RGB:- \
@@ -18,7 +16,6 @@ readonly RESOLUTION
 		--nofork \
 		--show-failed-attempts \
 		--pointer=default \
-		--color="${BACKGROUND_COLOR}" \
 		--raw="${RESOLUTION}:rgb" \
 		--image=/dev/stdin
 } 2>/dev/null
