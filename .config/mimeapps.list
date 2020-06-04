@@ -8,3 +8,7 @@ x-scheme-handler/unknown=firefox.desktop
 # Document viewers
 application/pdf=org.gnome.Evince.desktop
 image/vnd.djvu=org.gnome.Evince.desktop
+# Pictures
+image/gif=feh.desktop
+image/jpeg=feh.desktop
+image/png=feh.desktop
