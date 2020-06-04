@@ -17,6 +17,7 @@ order += "ethernet _first_"
 order += "run_watch PPP"
 order += "battery all"
 order += "cpu_usage"
+order += "memory"
 order += "volume master"
 order += "tztime local"
 
@@ -56,6 +57,12 @@ battery all {
 
 cpu_usage {
 	format = " %usage"
+}
+
+memory {
+	format = " %percentage_available"
+	threshold_degraded = "20%"
+	threshold_critical = "10%"
 }
 
 volume master {
