@@ -69,6 +69,8 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+shopt -s autocd globstar
+
 # Aliases
 alias ls='ls --color=auto'
 alias diff='diff --color=auto'
