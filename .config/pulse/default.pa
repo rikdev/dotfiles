@@ -1,0 +1,4 @@
+.include /etc/pulse/default.pa
+
+### LIRC support
+load-module module-lirc volume_step=1310

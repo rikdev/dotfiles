@@ -50,6 +50,15 @@
 !/.config/redshift/
 !/.config/redshift/redshift.conf
 
+# LIRC
+!/.config/lircrc
+!/.config/lircrc.d/
+!/.config/lircrc.d/pulseaudio
+
+# PulseAudio
+!/.config/pulse/
+!/.config/pulse/default.pa
+
 # .local/bin/
 !/.local/bin/
 !/.local/bin/dotfiles

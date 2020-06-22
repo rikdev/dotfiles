@@ -1,0 +1,22 @@
+begin
+    prog = PulseAudio
+    remote = *
+    button = KEY_VOLUMEUP
+    config = volume-up
+    repeat = 2
+end
+
+begin
+    prog = PulseAudio
+    remote = *
+    button = KEY_VOLUMEDOWN
+    config = volume-down
+    repeat = 2
+end
+
+begin
+    prog = PulseAudio
+    remote = *
+    button = KEY_MUTE
+    config = mute-toggle
+end
