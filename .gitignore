@@ -68,4 +68,5 @@
 !/.local/bin/dotfiles
 !/.local/bin/list-user-packages
 !/.local/bin/lock-screen
+!/.local/bin/pa-switch-sink
 !/.local/bin/set-background
