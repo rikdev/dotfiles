@@ -66,10 +66,10 @@ ${TAIL_COLOR}\\$ ${RESET_COLOR}"
 
 # Shell options
 HISTCONTROL=ignoreboth
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=5000
+HISTFILESIZE=$(( "${HISTSIZE}" * 2 ))
 
-shopt -s autocd globstar
+shopt -s autocd globstar histappend
 
 # Aliases
 alias ls='ls --color=auto'
