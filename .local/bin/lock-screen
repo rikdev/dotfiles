@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly WALLPAPER_PATH="${1:-/usr/share/backgrounds/archlinux/archlinux-simplyblack.png}"
+readonly WALLPAPER_PATH="${1:-/usr/share/backgrounds/archlinux/simple.png}"
 
 RESOLUTION="$(xrandr 2>/dev/null | awk '/*/ {print $1; exit}')"
 readonly RESOLUTION
