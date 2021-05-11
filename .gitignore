@@ -69,4 +69,11 @@
 !/.local/bin/list-user-packages
 !/.local/bin/lock-screen
 !/.local/bin/pa-switch-sink
+!/.local/bin/pw-switch-sink
 !/.local/bin/set-background
+
+# .local/share/
+!/.local/share/
+!/.local/share/bash-completion/
+!/.local/share/bash-completion/completions/
+!/.local/share/bash-completion/completions/pw-switch-sink

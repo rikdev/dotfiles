@@ -1,0 +1,18 @@
+_complete_pw_switch_sink()
+{
+	local -r COMP_WORD="${2}"
+
+	local DESCRIPTIONS
+	DESCRIPTIONS="$(pw-cli list-objects Node | awk '
+		BEGIN { FPAT = "([^ \t\n,=]+)|(\"[^\"]+\")" }
+		$1 == "node.description" { description = $2 }
+		$1 == "media.class" && $2 == "\"Audio/Sink\"" { print description }
+	')"
+	readonly DESCRIPTIONS
+
+	local IFS=$'\n'
+	COMPREPLY=($(compgen -W "${DESCRIPTIONS}" -- "${COMP_WORD}"))
+	IFS=$' \t\n'
+}
+
+complete -o filenames -o nospace -F _complete_pw_switch_sink pw-switch-sink
