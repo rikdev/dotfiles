@@ -1,0 +1,21 @@
+# See https://www.lirc.org/html/configure.html#lircrc_format
+
+begin
+    prog = irexec
+    button = KEY_VOLUMEUP
+    config = pactl set-sink-volume "@DEFAULT_SINK@" +2%
+    repeat = 1
+end
+
+begin
+    prog = irexec
+    button = KEY_VOLUMEDOWN
+    config = pactl set-sink-volume "@DEFAULT_SINK@" -2%
+    repeat = 1
+end
+
+begin
+    prog = irexec
+    button = KEY_MUTE
+    config = pactl set-sink-mute "@DEFAULT_SINK@" toggle
+end

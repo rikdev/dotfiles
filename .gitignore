@@ -32,6 +32,11 @@
 # Default applications
 !/.config/mimeapps.list
 
+# systemd
+!/.config/systemd/
+!/.config/systemd/user/
+!/.config/systemd/user/irexec.service
+
 # git
 !/.config/git/
 !/.config/git/config
@@ -57,7 +62,7 @@
 # LIRC
 !/.config/lircrc
 !/.config/lircrc.d/
-!/.config/lircrc.d/pulseaudio
+!/.config/lircrc.d/irexec
 
 # PulseAudio
 !/.config/pulse/

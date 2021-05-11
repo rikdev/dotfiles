@@ -1,1 +1,1 @@
-include "~/.config/lircrc.d/pulseaudio"
+include "~/.config/lircrc.d/irexec"

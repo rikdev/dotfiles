@@ -1,0 +1,11 @@
+[Unit]
+Description=Handle events from IR remotes decoded by lircd(8)
+Documentation=man:irexec(1)
+Documentation=http://lirc.org/html/configure.html#lircrc_format
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/irexec
+
+[Install]
+WantedBy=default.target
