@@ -2,6 +2,7 @@ git
 tk
 gvim
 screen
+python
 xterm
 i3-wm
 dmenu
@@ -9,6 +10,7 @@ i3status
 otf-font-awesome
 i3lock
 xss-lock
+pipewire-pulse
 playerctl
 compton
 feh

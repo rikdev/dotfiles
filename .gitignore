@@ -64,16 +64,11 @@
 !/.config/lircrc.d/
 !/.config/lircrc.d/irexec
 
-# PulseAudio
-!/.config/pulse/
-!/.config/pulse/default.pa
-
 # .local/bin/
 !/.local/bin/
 !/.local/bin/dotfiles
 !/.local/bin/list-user-packages
 !/.local/bin/lock-screen
-!/.local/bin/pa-switch-sink
 !/.local/bin/pw-switch-sink
 !/.local/bin/set-background
 

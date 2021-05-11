@@ -1,7 +1,0 @@
-.include /etc/pulse/default.pa
-
-### LIRC support
-load-module module-lirc volume_step=1310
-
-### Network access
-load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;::1
