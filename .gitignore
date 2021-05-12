@@ -51,6 +51,10 @@
 !/.config/git/
 !/.config/git/config
 
+# sway
+!/.config/sway/
+!/.config/sway/config
+
 # i3
 !/.config/i3/
 !/.config/i3/config
