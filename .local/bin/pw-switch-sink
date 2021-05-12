@@ -2,6 +2,7 @@
 
 '''Move all PipeWire sink inputs to the distination sink.'''
 
+import re
 import subprocess
 
 
@@ -39,31 +40,55 @@ def get_nodes():
     return (sinks, output_streams)
 
 
+def get_default_sink_name():
+    '''Returns the default PipeWire sink name'''
+    call_result = subprocess.run(
+        ['pw-metadata', '0'], capture_output=True, text=True, check=True)
+    for line in [l.strip() for l in call_result.stdout.splitlines()]:
+        if "key:'default.audio.sink'" in line:
+            m = re.search('"name": *"(.*)"', line)
+            return m[1]
+    return None
+
+
 if __name__ == "__main__":
     import argparse
     import sys
 
     parser = argparse.ArgumentParser(
         description='Move all PipeWire sink inputs to the distination sink.')
-    parser.add_argument('node_description', metavar='node-description',
-                        help='a "node.description" attribute value of the destination sink')
+    parser.add_argument('node_description', metavar='node-description', nargs='?',
+                        help='''a "node.description" attribute value of the destination sink
+                             (if empty prints current default sink)''')
 
     args = parser.parse_args()
     destination_sink_description = args.node_description
 
     sinks, output_streams = get_nodes()
 
-    try:
-        destination_sink = next(
-            s for s in sinks if s[2] == destination_sink_description)
-    except StopIteration:
-        print(
-            f'Couldn\'t find a sync node with description "{destination_sink_description}"', file=sys.stderr)
+    if destination_sink_description:
+        # Switch to the new sink
+        try:
+            destination_sink = next(
+                s for s in sinks if s[2] == destination_sink_description)
+        except StopIteration:
+            print(
+                f'Couldn\'t find a sync node with description "{destination_sink_description}"',
+                file=sys.stderr)
+            sys.exit(1)
+
+        subprocess.run(['pw-metadata', '0', 'default.configured.audio.sink',
+                       f'{{ "name": "{destination_sink[1]}" }}'], check=True)
+
+        for output_stream in output_streams:
+            subprocess.run(['pw-metadata', output_stream,
+                           'target.node', destination_sink[0]], check=False)
+    else:
+        # Show current default sink
+        default_sink_name = get_default_sink_name()
+        for node_id, node_name, node_description in sinks:
+            if node_name == default_sink_name:
+                print(node_description)
+                sys.exit(0)
+        print('Couldn\'t find default sync node', file=sys.stderr)
         sys.exit(1)
-
-    subprocess.run(['pw-metadata', '0', 'default.configured.audio.sink',
-                   f'{{ "name": "{destination_sink[1]}" }}'], check=True)
-
-    for output_stream in output_streams:
-        subprocess.run(['pw-metadata', output_stream,
-                       'target.node', destination_sink[0]], check=False)
