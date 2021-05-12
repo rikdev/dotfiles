@@ -59,7 +59,7 @@ if __name__ == "__main__":
         description='Move all PipeWire sink inputs to the distination sink.')
     parser.add_argument('node_description', metavar='node-description', nargs='?',
                         help='''a "node.description" attribute value of the destination sink
-                             (if empty prints current default sink)''')
+                             (if empty prints a list of sinks)''')
 
     args = parser.parse_args()
     destination_sink_description = args.node_description
@@ -84,11 +84,8 @@ if __name__ == "__main__":
             subprocess.run(['pw-metadata', output_stream,
                            'target.node', destination_sink[0]], check=False)
     else:
-        # Show current default sink
+        # Show a list of sinks
         default_sink_name = get_default_sink_name()
         for node_id, node_name, node_description in sinks:
-            if node_name == default_sink_name:
-                print(node_description)
-                sys.exit(0)
-        print('Couldn\'t find default sync node', file=sys.stderr)
-        sys.exit(1)
+            mark = '*' if node_name == default_sink_name else ' '
+            print(f'{mark}{node_description}')
