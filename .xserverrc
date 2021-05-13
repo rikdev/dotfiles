@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# https://wiki.archlinux.org/index.php/Xinit#xserverrc
+# https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_XServer_startup_options
+exec /usr/bin/X \
+	-nolisten tcp \
+	-nolisten local \
+	-ardelay 200 \
+	-arinterval 30 \
+	"$@" "vt${XDG_VTNR}"

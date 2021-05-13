@@ -1,6 +1,57 @@
 #include ".Xresources.monokai"
 
+! Cursor setting
+! https://wiki.archlinux.org/index.php/Cursor_themes#X_resources
+Xcursor.theme: Adwaita
+
+! Xft setting
+! https://wiki.archlinux.org/index.php/Font_configuration#Applications_without_fontconfig_support
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 ! XTerm settings
+! https://wiki.archlinux.org/index.php/Xterm#Configuration
+
+! https://wiki.archlinux.org/index.php/Xterm#TERM_Environmental_Variable
+xterm.*.termName: xterm-256color
+! https://wiki.archlinux.org/index.php/Xterm#UTF-8
+xterm.*.vt100.locale: true
+! https://wiki.archlinux.org/index.php/Xterm#Make_.27Alt.27_key_behave_as_on_other_terminal_emulators
+xterm.*.vt100.metaSendsEscape: true
+! https://wiki.archlinux.org/index.php/Xterm#Fix_the_backspace_key
+xterm.*.vt100.backarrowKey: false
+xterm.ttyModes: erase ^?
+! https://wiki.archlinux.org/index.php/Xterm#Scrolling
+xterm.*.vt100.saveLines: 4096
+! https://wiki.archlinux.org/index.php/Xterm#Scrollbar
+xterm.*.vt100.scrollBar: false
+xterm.*.vt100.scrollBar.width: 8
+xterm.*.vt100.rightScrollBar: true
+! https://wiki.archlinux.org/index.php/Xterm#Colors
+xterm.*.vt100.foreground: white
+xterm.*.vt100.background: black
+! https://wiki.archlinux.org/index.php/Xterm#Default_fonts
+xterm.*.vt100.faceName: DejaVu Sans Mono
+xterm.*.vt100.faceSize: 10
+! https://wiki.archlinux.org/index.php/Xterm#Enable_bell_urgency
+xterm.*.vt100.bellIsUrgent: true
+! https://wiki.archlinux.org/index.php/Xterm#Adjust_line_spacing
+xterm.*.vt100.scaleHeight: 1.01
+! Set window/icon labels using UTF-8 (overrides utf8Title resource)
+xterm.*.vt100.titleModes: 2
+! Trim trailing spaces from text which is selected
+xterm.*.vt100.trimSelection: true
+! Specifies whether or not output to the terminal should automatically cause
+! the scrollbar to go to the bottom of the scrolling region
+xterm.*.vt100.scrollTtyOutput: false
+! Double click select words, paths, URLs, etc.
+xterm.*.vt100.on2Clicks: regex (\\S|\\\\\\s)*
+! Select a group of adjacent lines (counting wrapping)
+xterm.*.vt100.on4Clicks: group
 
 xterm.*.vt100.color0: COLOR0
 xterm.*.vt100.color1: COLOR1
@@ -20,18 +71,6 @@ xterm.*.vt100.color14: COLOR14
 xterm.*.vt100.color15: COLOR15
 xterm.*.vt100.background: COLOR0
 xterm.*.vt100.foreground: COLOR7
-
-! Set window/icon labels using UTF-8 (overrides utf8Title resource)
-xterm.*.vt100.titleModes: 2
-! Trim trailing spaces from text which is selected
-xterm.*.vt100.trimSelection: true
-! Specifies whether or not output to the terminal should automatically cause
-! the scrollbar to go to the bottom of the scrolling region
-xterm.*.vt100.scrollTtyOutput: false
-! Double click select words, paths, URLs, etc.
-xterm.*.vt100.on2Clicks: regex (\\S|\\\\\\s)*
-! Select a group of adjacent lines (counting wrapping)
-xterm.*.vt100.on4Clicks: group
 
 xterm.*.vt100.faceSize1: 6
 xterm.*.vt100.faceSize2: 8
