@@ -69,6 +69,10 @@
 !/.config/dunst/
 !/.config/dunst/dunstrc
 
+# gammastep
+!/.config/gammastep/
+!/.config/gammastep/config.ini
+
 # redshift
 !/.config/redshift/
 !/.config/redshift/redshift.conf
