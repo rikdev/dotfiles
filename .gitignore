@@ -13,8 +13,10 @@
 !/.pam_environment
 
 # Shell
+!/.bash_profile
 !/.bashrc
 !/.inputrc
+!/.profile
 
 # Screen
 !/.screenrc
