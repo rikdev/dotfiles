@@ -1,0 +1,7 @@
+archlinux-wallpaper
+dex
+git
+imagemagick
+pipewire-pulse
+playerctl
+python
