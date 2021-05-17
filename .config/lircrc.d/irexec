@@ -19,3 +19,33 @@ begin
     button = KEY_MUTE
     config = pactl set-sink-mute "@DEFAULT_SINK@" toggle
 end
+
+begin
+    prog = irexec
+    button = KEY_PLAYPAUSE
+    config = playerctl play-pause
+end
+
+begin
+    prog = irexec
+    button = KEY_NEXT
+    config = playerctl next
+end
+
+begin
+    prog = irexec
+    button = KEY_PREV
+    config = playerctl previous
+end
+
+begin
+    prog = irexec
+    button = KEY_REDO
+    config = case $(playerctl loop) in None) playerctl loop Track;; Track) playerctl loop Playlist;; *) playerctl loop None;; esac
+end
+
+begin
+    prog = irexec
+    button = KEY_SHUFFLE
+    config = playerctl shuffle Toggle
+end
