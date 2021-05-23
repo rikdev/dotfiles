@@ -231,6 +231,6 @@ bindsym $mod+Pause mode "$mode_system"
 exec --no-startup-id compton --daemon # https://wiki.archlinux.org/index.php/I3#Tearing
 exec --no-startup-id set-background
 exec --no-startup-id xss-lock --ignore-sleep -- lock-screen
-exec --no-startup-id dex --autostart
+exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie --no-automount --tray
