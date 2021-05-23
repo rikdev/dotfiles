@@ -6,10 +6,13 @@ feh
 i3-wm
 i3lock
 i3status
+maim
 otf-font-awesome
 redshift
 ttf-dejavu
 udiskie
+xclip
+xdotool
 xorg-fonts-cyrillic
 xorg-fonts-misc
 xorg-server
