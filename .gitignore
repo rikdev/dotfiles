@@ -77,10 +77,10 @@
 # .local/bin/
 !/.local/bin/
 !/.local/bin/dotfiles
+!/.local/bin/get-wallpaper-path
 !/.local/bin/list-user-packages
 !/.local/bin/lock-screen
 !/.local/bin/pw-switch-sink
-!/.local/bin/set-background
 
 # .local/share/
 !/.local/share/
