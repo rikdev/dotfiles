@@ -1,0 +1,13 @@
+alacritty
+dmenu
+dunst
+gammastep
+grim
+i3status
+jq
+slurp
+sway
+swayidle
+swaylock
+wl-clipboard
+xorg-xwayland
