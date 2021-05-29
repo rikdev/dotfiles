@@ -55,6 +55,10 @@
 !/.config/sway/
 !/.config/sway/config
 
+# sway
+!/.config/swaylock/
+!/.config/swaylock/config
+
 # i3
 !/.config/i3/
 !/.config/i3/config
