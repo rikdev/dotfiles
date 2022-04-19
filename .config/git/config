@@ -24,9 +24,6 @@
 	autoStash = true
 	missingCommitsCheck = error
 
-[rerere]
-	enabled = true
-
 [status]
 	showStash = true
 
