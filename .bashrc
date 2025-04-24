@@ -5,6 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Environmet variables
+set -o allexport
+source <(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
+set +o allexport
+
 # Includes
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] \
 	&& source /usr/share/doc/pkgfile/command-not-found.bash
