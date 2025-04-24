@@ -41,7 +41,7 @@ ethernet _first_ {
 run_watch PPP {
 	format = " PPP"
 	format_down = ""
-	pidfile = "/var/run/ppp*.pid"
+	pidfile = "/var/run/pppd/ppp*.pid"
 }
 
 battery all {
